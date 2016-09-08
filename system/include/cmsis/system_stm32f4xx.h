@@ -61,7 +61,7 @@
   * @}
   */
 
-
+#define HSI_VALUE 16000000
 /** @addtogroup STM32F4xx_System_Exported_types
   * @{
   */
