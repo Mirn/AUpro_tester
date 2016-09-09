@@ -2,6 +2,19 @@
  * Default linker script for STM32Fxxx.
  */
 
+MEMORY
+{
+  RAM (xrw)     : ORIGIN = 0x20000000, LENGTH = 128K
+  CCMRAM (xrw)  : ORIGIN = 0x10000000, LENGTH = 64K
+  FLASH (rx)    : ORIGIN = 0x08008000, LENGTH = 1024K
+  FLASHB1 (rx)  : ORIGIN = 0x00000000, LENGTH = 0
+  EXTMEMB0 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  EXTMEMB1 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  EXTMEMB2 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  EXTMEMB3 (rx) : ORIGIN = 0x00000000, LENGTH = 0
+  MEMORY_ARRAY (xrw)  : ORIGIN = 0x20002000, LENGTH = 32
+}
+
 /*
  * The '__stack' definition is required by crt0, do not remove it.
  */
@@ -55,6 +68,7 @@ SECTIONS
      */
     .isr_vector :
     {
+    	. = 0x8000;
         . = ALIGN(4);
         KEEP(*(.isr_vector))     	/* Interrupt vectors */
         
