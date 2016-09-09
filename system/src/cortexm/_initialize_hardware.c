@@ -32,8 +32,8 @@ __attribute__((weak))
 __initialize_hardware(void)
 {
   // Call the CSMSIS system initialisation routine.
-  //SystemInit();
-  //SystemCoreClockUpdate();
+  SystemInit();
+  SystemCoreClockUpdate();
 
 #if defined (__VFP_FP__) && !defined (__SOFTFP__)
 

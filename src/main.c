@@ -2,31 +2,43 @@
 //#define TEST_ARM_MATH
 
 #ifdef TEST_PRINTF
-#include <stdio.h>
-#include <stdbool.h>
+#include "stm32kiss.h"
 #include "usart_mini.h"
-#include "stm32f4xx.h"
 
 #pragma GCC diagnostic ignored "-Wunused-parameter"
-
-char __printf_buf[512];
-#define printf(format, ...) {snprintf(__printf_buf, sizeof(__printf_buf)-1, format, ##__VA_ARGS__); send_str(__printf_buf);}
-
-void delay(volatile uint32_t time)
-{
-	time = time * 1000000;
-	while (time--);
-}
 
 int main(int argc, char* argv[])
 {
 	usart_init();
-	delay(30);
-	printf("SystemCoreClock\t%lu\n", SystemCoreClock);
+
+	printf("startup\n");
+
+	uint32_t time_arm = DWT_CYCCNT;
+	float32_t sum_arm = 0.0;
+	for (float32_t pos = 0.0; pos < PI*2; pos += PI/100.0f)
+		sum_arm += arm_sin_f32(pos);
+	time_arm = DWT_CYCCNT - time_arm;
+
+	uint32_t time_gcc = DWT_CYCCNT;
+	float32_t sum_gcc = 0.0;
+	for (float32_t pos = 0.0; pos < PI*2; pos += PI/100.0f)
+		sum_gcc += sinf(pos);
+	time_gcc = DWT_CYCCNT - time_gcc;
+
+	printf("library from\tARM\tGCC\n");
+	printf("sinf results\t%+06.4f\t%+06.4f\n", sum_arm, sum_gcc);
+	printf("sinf ticks  \t%lu\t%lu\n", time_arm, time_gcc);
+	printf("\n");
+
+	for (float32_t pos = 0.0; pos < PI*10; pos += PI/10.0f)
+		printf("%+06.4f\t%+07.6f\t%+07.6f\n", pos, arm_sin_f32(pos), sinf(pos));
+		//printf("%f\t%f\n", pos, arm_sin_f32(pos));
+		//printf("%li\t%li\n", (int32_t)(pos*1000), (int32_t)(1000*arm_sin_f32(pos)));
+	printf("\n");
 
 	while (1)
 	{
-		delay(30);
+		delay_ms(1000);
 		printf("test\r\n");
 	}
 }

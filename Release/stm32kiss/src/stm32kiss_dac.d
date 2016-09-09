@@ -1,7 +1,6 @@
-system/src/stm32spl/stm32f4xx_fmpi2c.o: \
- ../system/src/stm32spl/stm32f4xx_fmpi2c.c \
- ../system/include/stm32spl/stm32f4xx_fmpi2c.h \
- ../system/include/cmsis/stm32f4xx.h ../system/include/cmsis/core_cm4.h \
+stm32kiss/src/stm32kiss_dac.o: ../stm32kiss/src/stm32kiss_dac.c \
+ ../stm32kiss/inc/stm32kiss.h ../system/include/cmsis/stm32f4xx.h \
+ ../system/include/cmsis/core_cm4.h \
  ../system/include/cmsis/core_cmInstr.h \
  ../system/include/cmsis/core_cmFunc.h \
  ../system/include/cmsis/core_cmSimd.h \
@@ -32,9 +31,14 @@ system/src/stm32spl/stm32f4xx_fmpi2c.o: \
  ../system/include/stm32spl/stm32f4xx_can.h \
  ../system/include/stm32spl/stm32f4xx_dac.h \
  ../system/include/stm32spl/stm32f4xx_dcmi.h \
- ../system/include/stm32spl/stm32f4xx_fsmc.h
+ ../system/include/stm32spl/stm32f4xx_fsmc.h \
+ ../system/include/cmsis/arm_math.h \
+ ../system/include/stm32spl/stm32f4xx_cec.h \
+ ../stm32kiss/inc/stm32kiss_adc.h ../stm32kiss/inc/stm32kiss.h \
+ ../stm32kiss/inc/stm32kiss_dac.h ../stm32kiss/inc/stm32kiss_gpio.h \
+ ../stm32kiss/inc/stm32kiss_ticks.h ../stm32kiss/inc/stm32kiss_button.h
 
-../system/include/stm32spl/stm32f4xx_fmpi2c.h:
+../stm32kiss/inc/stm32kiss.h:
 
 ../system/include/cmsis/stm32f4xx.h:
 
@@ -101,3 +105,19 @@ system/src/stm32spl/stm32f4xx_fmpi2c.o: \
 ../system/include/stm32spl/stm32f4xx_dcmi.h:
 
 ../system/include/stm32spl/stm32f4xx_fsmc.h:
+
+../system/include/cmsis/arm_math.h:
+
+../system/include/stm32spl/stm32f4xx_cec.h:
+
+../stm32kiss/inc/stm32kiss_adc.h:
+
+../stm32kiss/inc/stm32kiss.h:
+
+../stm32kiss/inc/stm32kiss_dac.h:
+
+../stm32kiss/inc/stm32kiss_gpio.h:
+
+../stm32kiss/inc/stm32kiss_ticks.h:
+
+../stm32kiss/inc/stm32kiss_button.h:

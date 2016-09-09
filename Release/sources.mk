@@ -33,6 +33,7 @@ system/src/newlib \
 system/src/diag \
 system/src/cortexm \
 system/src/cmsis \
+stm32kiss/src \
 src/usart_lib \
 src \
 

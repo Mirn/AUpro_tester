@@ -1,7 +1,6 @@
-system/src/stm32spl/stm32f4xx_hash_md5.o: \
- ../system/src/stm32spl/stm32f4xx_hash_md5.c \
- ../system/include/stm32spl/stm32f4xx_hash.h \
- ../system/include/cmsis/stm32f4xx.h ../system/include/cmsis/core_cm4.h \
+stm32kiss/src/stm32kiss_fifo.o: ../stm32kiss/src/stm32kiss_fifo.c \
+ ../stm32kiss/inc/stm32kiss.h ../system/include/cmsis/stm32f4xx.h \
+ ../system/include/cmsis/core_cm4.h \
  ../system/include/cmsis/core_cmInstr.h \
  ../system/include/cmsis/core_cmFunc.h \
  ../system/include/cmsis/core_cmSimd.h \
@@ -27,13 +26,20 @@ system/src/stm32spl/stm32f4xx_hash_md5.o: \
  ../system/include/stm32spl/stm32f4xx_wwdg.h \
  ../system/include/stm32spl/misc.h \
  ../system/include/stm32spl/stm32f4xx_cryp.h \
+ ../system/include/stm32spl/stm32f4xx_hash.h \
  ../system/include/stm32spl/stm32f4xx_rng.h \
  ../system/include/stm32spl/stm32f4xx_can.h \
  ../system/include/stm32spl/stm32f4xx_dac.h \
  ../system/include/stm32spl/stm32f4xx_dcmi.h \
- ../system/include/stm32spl/stm32f4xx_fsmc.h
+ ../system/include/stm32spl/stm32f4xx_fsmc.h \
+ ../system/include/cmsis/arm_math.h \
+ ../system/include/stm32spl/stm32f4xx_cec.h \
+ ../stm32kiss/inc/stm32kiss_adc.h ../stm32kiss/inc/stm32kiss.h \
+ ../stm32kiss/inc/stm32kiss_dac.h ../stm32kiss/inc/stm32kiss_gpio.h \
+ ../stm32kiss/inc/stm32kiss_ticks.h ../stm32kiss/inc/stm32kiss_button.h \
+ ../stm32kiss/inc/stm32kiss_fifo.h
 
-../system/include/stm32spl/stm32f4xx_hash.h:
+../stm32kiss/inc/stm32kiss.h:
 
 ../system/include/cmsis/stm32f4xx.h:
 
@@ -89,6 +95,8 @@ system/src/stm32spl/stm32f4xx_hash_md5.o: \
 
 ../system/include/stm32spl/stm32f4xx_cryp.h:
 
+../system/include/stm32spl/stm32f4xx_hash.h:
+
 ../system/include/stm32spl/stm32f4xx_rng.h:
 
 ../system/include/stm32spl/stm32f4xx_can.h:
@@ -98,3 +106,21 @@ system/src/stm32spl/stm32f4xx_hash_md5.o: \
 ../system/include/stm32spl/stm32f4xx_dcmi.h:
 
 ../system/include/stm32spl/stm32f4xx_fsmc.h:
+
+../system/include/cmsis/arm_math.h:
+
+../system/include/stm32spl/stm32f4xx_cec.h:
+
+../stm32kiss/inc/stm32kiss_adc.h:
+
+../stm32kiss/inc/stm32kiss.h:
+
+../stm32kiss/inc/stm32kiss_dac.h:
+
+../stm32kiss/inc/stm32kiss_gpio.h:
+
+../stm32kiss/inc/stm32kiss_ticks.h:
+
+../stm32kiss/inc/stm32kiss_button.h:
+
+../stm32kiss/inc/stm32kiss_fifo.h:

@@ -64,6 +64,7 @@
 									<listOptionValue builtIn="false" value="&quot;../system/include/cmsis&quot;"/>
 									<listOptionValue builtIn="false" value="../system/include/stm32spl"/>
 									<listOptionValue builtIn="false" value="../src/usart_lib"/>
+									<listOptionValue builtIn="false" value="../stm32kiss/inc"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.defs.1406261128" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.defs" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32F405xx"/>
@@ -80,6 +81,7 @@
 									<listOptionValue builtIn="false" value="&quot;../system/include/cmsis&quot;"/>
 									<listOptionValue builtIn="false" value="../system/include/stm32spl"/>
 									<listOptionValue builtIn="false" value="../src/usart_lib"/>
+									<listOptionValue builtIn="false" value="../stm32kiss/inc"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.warning.missingprototypes.1761220766" name="Warn if a global function has no prototype (-Wmissing-prototypes)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.warning.missingprototypes" useByScannerDiscovery="true" value="false" valueType="boolean"/>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.warning.strictprototypes.1044971351" name="Warn if a function has no arg type (-Wstrict-prototypes)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.warning.strictprototypes" useByScannerDiscovery="true" value="false" valueType="boolean"/>
@@ -99,6 +101,7 @@
 									<listOptionValue builtIn="false" value="&quot;../system/include/cmsis&quot;"/>
 									<listOptionValue builtIn="false" value="../system/include/stm32spl"/>
 									<listOptionValue builtIn="false" value="../src/usart_lib"/>
+									<listOptionValue builtIn="false" value="../stm32kiss/inc"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.noexceptions.1069066696" name="Do not use exceptions (-fno-exceptions)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.noexceptions" useByScannerDiscovery="true" value="true" valueType="boolean"/>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.nortti.532265671" name="Do not use RTTI (-fno-rtti)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.nortti" useByScannerDiscovery="true" value="true" valueType="boolean"/>
@@ -148,7 +151,7 @@
 									<listOptionValue builtIn="false" value="sections.ld"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.nostart.2054807587" name="Do not use standard start files (-nostartfiles)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.nostart" value="true" valueType="boolean"/>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.other.1953454829" name="Other linker flags" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.other" value=" --specs=nano.specs" valueType="string"/>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.other.1953454829" name="Other linker flags" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.other" value=" --specs=nano.specs  -u _printf_float" valueType="string"/>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.libs.460768800" name="Libraries (-l)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="arm_cortexM4lf_math"/>
 								</option>
@@ -176,7 +179,8 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry excluding="usart_lib/usart_printf.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
-						<entry excluding="src/stm32spl/stm32f4xx_fmc.c|src/stm32spl/stm32f4xx_cryp.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="system"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="stm32kiss/src"/>
+						<entry excluding="src/stm32spl/stm32f4xx_qspi.c|src/stm32spl/stm32f4xx_dfsdm.c|src/stm32spl/stm32f4xx_fmpi2c.c|src/stm32spl/stm32f4xx_dsi.c|src/stm32spl/stm32f4xx_spdifrx.c|src/stm32spl/stm32f4xx_sai.c|src/stm32spl/stm32f4xx_ltdc.c|src/stm32spl/stm32f4xx_lptim.c|src/stm32spl/stm32f4xx_hash.c|src/stm32spl/stm32f4xx_hash_sha1.c|src/stm32spl/stm32f4xx_hash_md5.c|src/stm32spl/stm32f4xx_dma2d.c|src/stm32spl/stm32f4xx_cryp_tdes.c|src/stm32spl/stm32f4xx_cryp_des.c|src/stm32spl/stm32f4xx_cryp_aes.c|src/stm32spl/stm32f4xx_fmc.c|src/stm32spl/stm32f4xx_cryp.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="system"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
