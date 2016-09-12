@@ -64,8 +64,7 @@ typedef struct
 //#include "stm32kiss_fifo.h"
 //#include "stm32kiss_dma_usarts.h"
 
-void PrintChar(char c);
-signed int printf(const char *pFormat, ...);
+#define PrintChar(c) PrintChar_fast(c)
 
 static inline void PrintChar_fast(char c)
 {
@@ -115,6 +114,7 @@ static inline void usec_timer_report(const char *title, uint32_t time_start)
 #pragma GCC diagnostic pop
 }
 
+#include "usart_mini.h"
 extern char __printf_buf[512];
 #define printf(format, ...) {snprintf(__printf_buf, sizeof(__printf_buf)-1, format, ##__VA_ARGS__); send_str(__printf_buf);}
 

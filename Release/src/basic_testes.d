@@ -1,6 +1,5 @@
-stm32kiss/src/stm32kiss_fifo.o: ../stm32kiss/src/stm32kiss_fifo.c \
- ../stm32kiss/inc/stm32kiss.h ../system/include/cmsis/stm32f4xx.h \
- ../system/include/cmsis/core_cm4.h \
+src/basic_testes.o: ../src/basic_testes.c ../stm32kiss/inc/stm32kiss.h \
+ ../system/include/cmsis/stm32f4xx.h ../system/include/cmsis/core_cm4.h \
  ../system/include/cmsis/core_cmInstr.h \
  ../system/include/cmsis/core_cmFunc.h \
  ../system/include/cmsis/core_cmSimd.h \
@@ -37,7 +36,7 @@ stm32kiss/src/stm32kiss_fifo.o: ../stm32kiss/src/stm32kiss_fifo.c \
  ../stm32kiss/inc/stm32kiss_adc.h ../stm32kiss/inc/stm32kiss.h \
  ../stm32kiss/inc/stm32kiss_dac.h ../stm32kiss/inc/stm32kiss_gpio.h \
  ../stm32kiss/inc/stm32kiss_ticks.h ../stm32kiss/inc/stm32kiss_button.h \
- ../src/usart_lib/usart_mini.h ../stm32kiss/inc/stm32kiss_fifo.h
+ ../src/usart_lib/usart_mini.h
 
 ../stm32kiss/inc/stm32kiss.h:
 
@@ -124,5 +123,3 @@ stm32kiss/src/stm32kiss_fifo.o: ../stm32kiss/src/stm32kiss_fifo.c \
 ../stm32kiss/inc/stm32kiss_button.h:
 
 ../src/usart_lib/usart_mini.h:
-
-../stm32kiss/inc/stm32kiss_fifo.h:

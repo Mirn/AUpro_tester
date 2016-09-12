@@ -36,7 +36,7 @@ src/main.o: ../src/main.c ../stm32kiss/inc/stm32kiss.h \
  ../stm32kiss/inc/stm32kiss_adc.h ../stm32kiss/inc/stm32kiss.h \
  ../stm32kiss/inc/stm32kiss_dac.h ../stm32kiss/inc/stm32kiss_gpio.h \
  ../stm32kiss/inc/stm32kiss_ticks.h ../stm32kiss/inc/stm32kiss_button.h \
- ../src/usart_lib/usart_mini.h
+ ../src/usart_lib/usart_mini.h ../src/basic_testes.h
 
 ../stm32kiss/inc/stm32kiss.h:
 
@@ -123,3 +123,5 @@ src/main.o: ../src/main.c ../stm32kiss/inc/stm32kiss.h \
 ../stm32kiss/inc/stm32kiss_button.h:
 
 ../src/usart_lib/usart_mini.h:
+
+../src/basic_testes.h:

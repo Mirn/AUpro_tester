@@ -36,7 +36,8 @@ stm32kiss/src/stm32kiss_dac.o: ../stm32kiss/src/stm32kiss_dac.c \
  ../system/include/stm32spl/stm32f4xx_cec.h \
  ../stm32kiss/inc/stm32kiss_adc.h ../stm32kiss/inc/stm32kiss.h \
  ../stm32kiss/inc/stm32kiss_dac.h ../stm32kiss/inc/stm32kiss_gpio.h \
- ../stm32kiss/inc/stm32kiss_ticks.h ../stm32kiss/inc/stm32kiss_button.h
+ ../stm32kiss/inc/stm32kiss_ticks.h ../stm32kiss/inc/stm32kiss_button.h \
+ ../src/usart_lib/usart_mini.h
 
 ../stm32kiss/inc/stm32kiss.h:
 
@@ -121,3 +122,5 @@ stm32kiss/src/stm32kiss_dac.o: ../stm32kiss/src/stm32kiss_dac.c \
 ../stm32kiss/inc/stm32kiss_ticks.h:
 
 ../stm32kiss/inc/stm32kiss_button.h:
+
+../src/usart_lib/usart_mini.h:
