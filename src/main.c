@@ -13,10 +13,10 @@ int main(int argc, char* argv[])
 
 	printf("startup\n");
 
-	rand_test();
+	//rand_test();
 	//malloc_test();
 	//arm_sin_test();
-	arm_fir_test();
+	//arm_fir_test();
 
 	while (1)
 	{

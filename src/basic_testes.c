@@ -204,11 +204,11 @@ void fir2(float *NewSample, float *result, UNUSED uint32_t cnt)
 
 void arm_fir_test()
 {
-	const size_t CNT = 256;
-	float32_t data_in[CNT];
-	float32_t data_out_a[CNT];
-	float32_t data_out_b[CNT];
-	float32_t data_out_c[CNT];
+#define CNT 4096
+	static float32_t data_in[CNT];
+	static float32_t data_out_a[CNT];
+	static float32_t data_out_b[CNT];
+	static float32_t data_out_c[CNT];
 
 	for (uint32_t pos = 0; pos < LENGTH(data_in); pos++)
 		data_in[pos] = (
@@ -245,8 +245,8 @@ void arm_fir_test()
 	printf("time_c\t%lu\t%lu\n", time_c, time_c / CNT);
 	printf("\n");
 
-#define SAMPLES					512 			/* 256 real party and 256 imaginary parts */
-#define FFT_SIZE				SAMPLES / 2		/* FFT size is always the same size as we have samples, so 256 in our case */
+#define SAMPLES					(CNT*2) 			/* 256 real party and 256 imaginary parts */
+#define FFT_SIZE				(SAMPLES / 2)		/* FFT size is always the same size as we have samples, so 256 in our case */
 	arm_cfft_radix4_instance_f32 S;
 
 	static float32_t Input[SAMPLES];
@@ -254,6 +254,7 @@ void arm_fir_test()
 
 	for (uint32_t pos = 0; pos < LENGTH(data_in); pos++)
 	{
+		data_in[pos] *= (0.5f - 0.5f * cosf(2.0f*PI * pos / (FFT_SIZE-1)));
 		Input[pos * 2 + 0] = data_in[pos];
 		Input[pos * 2 + 1] = 0;
 	}
@@ -261,13 +262,20 @@ void arm_fir_test()
 	/* Initialize the CFFT/CIFFT module, intFlag = 0, doBitReverse = 1 */
 	arm_cfft_radix4_init_f32(&S, FFT_SIZE, 0, 1);
 
+	uint32_t time_fft = DWT_CYCCNT;
 	/* Process the data through the CFFT/CIFFT module */
 	arm_cfft_radix4_f32(&S, Input);
+	time_fft = DWT_CYCCNT - time_fft;
 
 	/* Process the data through the Complex Magniture Module for calculating the magnitude at each bin */
 	arm_cmplx_mag_f32(Input, Output, FFT_SIZE);
 
 	for (uint32_t pos = 0; pos < LENGTH(Output); pos++)
-		printf("%+06.4f\n", Output[pos]);
+		printf("%f\t%f\n", data_in[pos], Output[pos]);
+	printf("\n");
+
+	printf("FFT time: %lu\tticks\n", time_fft);
+	printf("FFT time: %lu\tuS\n", (uint32_t)(((uint64_t)time_fft * 1000000LL) / SystemCoreClock));
+	printf("\n");
 }
 
